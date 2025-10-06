@@ -1,0 +1,14 @@
+<div class="robot-verification">
+  <div class="checkbox-container">
+    <input type="checkbox" id="robot-checkbox" (change)="onCheckboxChange()" [checked]="isVerified" [disabled]="isLoading">
+    <label for="robot-checkbox" class="checkbox-label">
+      <span class="checkmark" [class.checked]="isVerified"></span>
+      I'm not a robot
+    </label>
+  </div>
+  <div class="status">
+    <p *ngIf="isLoading">Verifying...</p>
+    <p *ngIf="isVerified && !isLoading" class="success">Verification successful!</p>
+    <p *ngIf="!isVerified && !isLoading" class="error">Verification failed.</p>
+  </div>
+</div>
